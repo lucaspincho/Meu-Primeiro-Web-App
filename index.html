@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Primeiro Web App - Atividade Mobile</title>
@@ -11,14 +6,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+ 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ 		<meta name="apple-mobile-web-app-title" content="edson iOS">
+
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="canonical" href="https://safetycompany.netlify.app">
+		<link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+		<link rel="manifest" href="manifest.json" /> 
+
+
 	</head>
+
 	<body class="is-preload">
 
-		<!-- Wrapper -->
+		<script>
+			if ("serviceWorker" in navigator) {
+			 if (navigator.serviceWorker.controller) {
+			 console.log("[PWA Builder] active service worker found, no need to register");
+			 } else {
+				
+			 navigator.serviceWorker
+			 .register("pwabuilder-sw.js", {
+			 scope: "./"
+			 })
+			 .then(function (reg) {
+			 console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+			 });
+			 }
+			}
+			</script>
+
 			<div id="wrapper">
 
-				<!-- Intro -->
 					<section class="intro">
 						<header style="padding-bottom: 0px;
 						padding-top: 60px;">
@@ -34,7 +55,6 @@
 					</section>
 
 
-					<!-- Section -->
 					<section id="first">
 						<header>
 							<h2>Sobre nós</h2>
@@ -48,7 +68,6 @@
 
 					
 
-				<!-- Section -->
 					<section>
 						<header>
 							<h2>Nossos equipamentos</h2>
@@ -56,7 +75,6 @@
 						<div class="content">
 							<p><strong>Segurança e Conforto,</strong> são com essas palavras que os clientes das Safety Company descrevem os nossos produtos.</p>
 
-							<!-- Section -->
 								<section>
 									<header>
 										<h3>Capacetes de Segurança</h3>
@@ -72,7 +90,6 @@
 									</div>
 								</section>
 
-							<!-- Section -->
 								<section>
 									<header>
 										<h3>Óculos de Proteção</h3>
@@ -91,7 +108,6 @@
 					
 
 
-							<!-- Section -->
 								<section>
 									<header>
 										<h3>Máscaras Faciais</h3>
@@ -125,7 +141,6 @@
 						</div>
 					</section>
 
-				<!-- Section -->
 					<section>
 						<header>
 							<h2>Solicite um orçamento</h2>
@@ -186,12 +201,10 @@
 						</footer>
 					</section>
 
-				<!-- Copyright -->
 					<div class="copyright">&copy; safetycompany. Designed by <a href="https://html5up.net">Lucas Pincho</a>.</div>
 
 			</div>
 
-		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
